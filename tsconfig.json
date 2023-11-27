@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "incremental": true,
     "useDefineForClassFields": true,
-    "types": ["vite/client"]
+    "types": ["vite/client", "vite-plugin-glsl/ext"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
