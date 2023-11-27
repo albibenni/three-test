@@ -124,10 +124,8 @@ loadGltf2().then((gltf) => {
     }
   });
 });
-console.log(
-  scene.children.forEach((child) =>
-    child.type === "Group" ? console.log(child) : null
-  )
+scene.children.forEach((child) =>
+  child.type === "Group" ? console.log(child) : null
 );
 
 /**
