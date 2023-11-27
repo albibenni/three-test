@@ -111,21 +111,24 @@ dlFolder.open();
  */
 const gltfLoader = new GLTFLoader();
 const loadGltf2 = async () => await gltfLoader.loadAsync("./moto/scene.gltf");
-
 loadGltf2().then((gltf) => {
-  scene.add(gltf.scene);
+  //   scene.add(gltf.scene);
   gltf.scene.position.x = 0;
   gltf.scene.position.y = +1;
   gltf.scene.scale.set(2, 2, 2);
-  // mainGroup.add(gltf.scene);
+  mainGroup.add(gltf.scene);
   gltf.scene.traverse((node) => {
     if (node instanceof THREE.Mesh) {
-      console.log("is a mesh");
       node.castShadow = true;
       node.receiveShadow = true;
     }
   });
 });
+console.log(
+  scene.children.forEach((child) =>
+    child.type === "Group" ? console.log(child) : null
+  )
+);
 
 /**
  * renderer
